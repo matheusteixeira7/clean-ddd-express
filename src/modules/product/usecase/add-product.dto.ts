@@ -25,6 +25,7 @@ export interface AddProductInputDto {
   price: number
   rating: number
   size: string[]
+  stock: number
   subcategory: string
   updatedAt?: Date
 }
@@ -53,6 +54,7 @@ export interface AddProductOutputDto {
   price: number
   rating: number
   size: string[]
+  stock: number
   subcategory: string
   updatedAt: Date
 }

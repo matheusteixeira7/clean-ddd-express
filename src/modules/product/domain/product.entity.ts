@@ -25,6 +25,7 @@ interface ProductProps {
   price: number
   rating: number
   size: string[]
+  stock: number
   subcategory: string
   updatedAt?: Date
 }
@@ -33,6 +34,7 @@ export default class Product extends BaseEntity implements AggregateRoot {
   private readonly _category: string
   private readonly _subcategory: string
   private readonly _size: string[]
+  private readonly _stock: number
   private readonly _name: string
   private readonly _price: number
   private readonly _rating: number
@@ -60,6 +62,7 @@ export default class Product extends BaseEntity implements AggregateRoot {
     this._category = props.category
     this._subcategory = props.subcategory
     this._size = props.size
+    this._stock = props.stock
     this._name = props.name
     this._price = props.price
     this._rating = props.rating
@@ -79,6 +82,10 @@ export default class Product extends BaseEntity implements AggregateRoot {
 
   get size (): string[] {
     return this._size
+  }
+
+  get stock (): number {
+    return this._stock
   }
 
   get name (): string {

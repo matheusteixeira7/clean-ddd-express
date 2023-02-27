@@ -19,6 +19,9 @@ export class ProductModel extends Model {
     size!: string[]
 
   @Column({ allowNull: false })
+    stock!: number
+
+  @Column({ allowNull: false })
     name!: string
 
   @Column({ allowNull: false })
