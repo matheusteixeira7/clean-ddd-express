@@ -1,31 +1,32 @@
-import Id from '#seedwork/domain/value-objects/id.value-object'
 import BaseEntity from '#seedwork/domain/entity/base.entity'
 import type AggregateRoot from '#seedwork/domain/entity/aggregate-root.interface'
 
 interface ProductProps {
-  id?: string
   category: string
-  subcategory: string
-  size: string[]
-  name: string
-  price: number
-  rating: number
+  colors: Array<{
+    name: string
+    bgColor: string
+    selectedColor: string
+  }>
+  createdAt?: Date
+  description: string
+  details: Array<{
+    name: string
+    items: string[]
+  }>
+  id?: string
   images: Array<{
     id: string
     name: string
     src: string
     alt: string
   }>
-  colors: Array<{
-    name: string
-    bgColor: string
-    selectedColor: string
-  }>
-  description: string
-  details: Array<{
-    name: string
-    items: string[]
-  }>
+  name: string
+  price: number
+  rating: number
+  size: string[]
+  subcategory: string
+  updatedAt?: Date
 }
 
 export default class Product extends BaseEntity implements AggregateRoot {
@@ -120,36 +121,3 @@ export default class Product extends BaseEntity implements AggregateRoot {
     return this._details
   }
 }
-
-const product = new Product({
-  category: 'category',
-  subcategory: 'subcategory',
-  size: ['size'],
-  name: 'name',
-  price: 1,
-  rating: 1,
-  images: [
-    {
-      id: new Id().id,
-      name: 'name',
-      src: 'src',
-      alt: 'alt'
-    }
-  ],
-  colors: [
-    {
-      name: 'name',
-      bgColor: 'bgColor',
-      selectedColor: 'selectedColor'
-    }
-  ],
-  description: 'description',
-  details: [
-    {
-      name: 'name',
-      items: ['item']
-    }
-  ]
-})
-
-console.log(product)

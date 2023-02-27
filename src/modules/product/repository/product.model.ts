@@ -50,4 +50,10 @@ export class ProductModel extends Model {
     name: string
     items: string[]
   }>
+
+  @Column({ allowNull: false })
+    createdAt!: Date
+
+  @Column({ allowNull: false })
+    updatedAt!: Date
 }
