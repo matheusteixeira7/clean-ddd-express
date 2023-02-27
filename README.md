@@ -1,3 +1,3 @@
 1. Domain -> entity
 2. Gateway
-3. Repository
+3. Repository -> model - > repository

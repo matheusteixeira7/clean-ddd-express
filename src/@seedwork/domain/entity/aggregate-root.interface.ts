@@ -1,7 +1,5 @@
-import type Id from '#seedwork/domain/value-objects/id.value-object'
-
 export default interface AggregateRoot {
-  id: Id
+  id: string
   createdAt: Date
   updatedAt: Date
 }
