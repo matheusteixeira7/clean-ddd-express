@@ -1,5 +1,5 @@
 import type ProductRepository from '#modules/product/repository/product.repository'
-import { type AddProductInputDto, type AddProductOutputDto } from '#modules/product/usecase/add-product.dto'
+import { type AddProductInputDto, type AddProductOutputDto } from '#modules/product/usecase/add-product/add-product.dto'
 import Product from '#modules/product/domain/product.entity'
 
 export default class AddProductUseCase {
