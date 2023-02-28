@@ -14,6 +14,11 @@ export default {
   rootDir: 'src',
   testRegex: '.*\\..*spec\\.ts$',
   transform: {
-    '^.+\\.ts?$': ['@swc/jest']
+    '^.+\\.(t|j)sx?$': '@swc/jest'
+  },
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1',
+    '#seedwork/(.*)': '<rootDir>/@seedwork/$1',
+    '#modules/(.*)': '<rootDir>/modules/$1'
   }
 }
