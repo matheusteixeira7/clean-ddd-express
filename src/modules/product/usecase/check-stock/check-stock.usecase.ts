@@ -12,9 +12,10 @@ export default class CheckStockUseCase implements UseCaseInterface {
   async execute (input: CheckStockInputDto): Promise<CheckStockOutputDto> {
     const product = await this._productRepository.find(input.productId)
 
-    return {
-      productId: product.id,
-      stock: product.stock
+    if (product.stock >= input.quantity) {
+      return { productId: product.id, available: true }
+    } else {
+      return { productId: product.id, available: false }
     }
   }
 }

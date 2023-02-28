@@ -32,11 +32,12 @@ export interface AddProductFacadeInputDto {
 
 export interface CheckStockFacadeInputDto {
   productId: string
+  quantity: number
 }
 
 export interface CheckStockFacadeOutputDto {
   productId: string
-  stock: number
+  available: boolean
 }
 
 export interface ProductFacadeInterface {
