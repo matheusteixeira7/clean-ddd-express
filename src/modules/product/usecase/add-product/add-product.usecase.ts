@@ -1,8 +1,9 @@
 import type ProductRepository from '#modules/product/repository/product.repository'
 import { type AddProductInputDto, type AddProductOutputDto } from '#modules/product/usecase/add-product/add-product.dto'
 import Product from '#modules/product/domain/product.entity'
+import type UseCaseInterface from '#seedwork/usecase/usecase.interface'
 
-export default class AddProductUseCase {
+export default class AddProductUseCase implements UseCaseInterface {
   private readonly _productRepository: ProductRepository
 
   constructor (productRepository: ProductRepository) {
