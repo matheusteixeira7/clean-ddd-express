@@ -18,8 +18,8 @@ export default class ProductRepository implements ProductGateway {
       colors: product.colors,
       description: product.description,
       details: product.details,
-      createdAt: Date.now,
-      updatedAt: Date.now
+      createdAt: Date.now(),
+      updatedAt: Date.now()
     })
   }
 
