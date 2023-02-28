@@ -28,9 +28,12 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "pg": "^8.9.0",
+    "postgres": "^3.3.3",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.29.0",
     "sequelize-typescript": "^2.1.5",
+    "sqlite3": "^5.1.4",
     "uuid": "^9.0.0"
   }
 }

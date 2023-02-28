@@ -1,62 +1,65 @@
-import { Column, Model, PrimaryKey, Table } from 'sequelize-typescript'
+import { Table, Column, Model, PrimaryKey, DataType } from 'sequelize-typescript'
 
-@Table({
-  tableName: 'products',
-  timestamps: false
-})
-export class ProductModel extends Model {
+interface Image {
+  id: string
+  name: string
+  src: string
+  alt: string
+}
+
+interface Color {
+  name: string
+  bgColor: string
+  selectedColor: string
+}
+
+interface Detail {
+  name: string
+  items: string[]
+}
+
+@Table({ tableName: 'products' })
+export class ProductModel extends Model<ProductModel> {
   @PrimaryKey
-  @Column({ allowNull: false })
+  @Column({ type: DataType.STRING, allowNull: false })
     id!: string
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.STRING, allowNull: false })
     category!: string
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.STRING, allowNull: false })
     subcategory!: string
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.ARRAY(DataType.STRING), allowNull: false })
     size!: string[]
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.INTEGER, allowNull: false })
     stock!: number
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.STRING, allowNull: false })
     name!: string
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.DECIMAL(10, 2), allowNull: false })
     price!: number
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.DECIMAL(2, 1), allowNull: false })
     rating!: number
 
-  @Column({ allowNull: false })
-    images!: Array<{
-    id: string
-    name: string
-    src: string
-    alt: string
-  }>
+  @Column({ type: DataType.JSON, allowNull: false })
+    images!: Image[]
 
-  @Column({ allowNull: false })
-    colors!: Array<{
-    name: string
-    bgColor: string
-    selectedColor: string
-  }>
+  @Column({ type: DataType.JSON, allowNull: false })
+    colors!: Color[]
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.TEXT, allowNull: false })
     description!: string
 
-  @Column({ allowNull: false })
-    details!: Array<{
-    name: string
-    items: string[]
-  }>
+  @Column({ type: DataType.JSON, allowNull: false })
+    details!: Detail[]
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.DATE, allowNull: false })
     createdAt!: Date
 
-  @Column({ allowNull: false })
+  @Column({ type: DataType.DATE, allowNull: false })
     updatedAt!: Date
 }
