@@ -15,7 +15,7 @@ const product = new Product({
   price: 99.99,
   rating: 4.5,
   size: ['M', 'L'],
-  stock: 10,
+  stock: 5,
   subcategory: 'laptops'
 })
 
@@ -29,16 +29,31 @@ const mockProductRepository = {
 const checkStockUseCase = new CheckStockUseCase(mockProductRepository)
 
 describe('CheckStockUseCase', () => {
-  it('should return the correct product stock', async () => {
+  it('should return available true', async () => {
     // Create an example input DTO
     const input: CheckStockInputDto = {
-      productId: 'abc123'
+      productId: 'abc123',
+      quantity: 5
     }
 
     // Call the execute method with the input DTO
     const output: CheckStockOutputDto = await checkStockUseCase.execute(input)
 
     // Assert that the correct product stock was returned
-    expect(output).toEqual({ productId: 'abc123', stock: 10 })
+    expect(output).toEqual({ productId: 'abc123', available: true })
+  })
+
+  it('should return available false', async () => {
+    // Create an example input DTO
+    const input: CheckStockInputDto = {
+      productId: 'abc123',
+      quantity: 10
+    }
+
+    // Call the execute method with the input DTO
+    const output: CheckStockOutputDto = await checkStockUseCase.execute(input)
+
+    // Assert that the correct product stock was returned
+    expect(output).toEqual({ productId: 'abc123', available: false })
   })
 })
