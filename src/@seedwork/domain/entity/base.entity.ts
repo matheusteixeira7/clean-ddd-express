@@ -1,17 +1,17 @@
 import Id from '#seedwork/domain/value-objects/id.value-object'
 
 export default class BaseEntity {
-  private readonly _id: Id
+  private readonly _id: string
   private _createdAt: Date
   private _updatedAt: Date
 
-  constructor (id?: Id, createdAt?: Date, updatedAt?: Date) {
-    this._id = id ?? new Id()
+  constructor (id?: string, createdAt?: Date, updatedAt?: Date) {
+    this._id = id ?? new Id().id
     this._createdAt = createdAt ?? new Date()
     this._updatedAt = updatedAt ?? new Date()
   }
 
-  public get id (): Id {
+  public get id (): string {
     return this._id
   }
 
