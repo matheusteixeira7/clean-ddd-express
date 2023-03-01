@@ -6,20 +6,20 @@ import Id from '#seedwork/domain/value-objects/id.value-object'
 export default class ProductRepository implements ProductGateway {
   async add (product: Product): Promise<void> {
     await ProductModel.create({
-      id: product.id,
       category: product.category,
-      subcategory: product.subcategory,
-      size: product.size,
-      stock: product.stock,
+      colors: product.colors,
+      createdAt: product.createdAt,
+      description: product.description,
+      details: product.details,
+      id: product.id,
+      images: product.images,
       name: product.name,
       price: product.price,
       rating: product.rating,
-      images: product.images,
-      colors: product.colors,
-      description: product.description,
-      details: product.details,
-      createdAt: Date.now(),
-      updatedAt: Date.now()
+      size: product.size,
+      stock: product.stock,
+      subcategory: product.subcategory,
+      updatedAt: new Date()
     })
   }
 

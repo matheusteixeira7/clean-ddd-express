@@ -22,7 +22,10 @@ export default class AddProductUseCase implements UseCaseInterface {
       rating: input.rating,
       size: input.size,
       stock: input.stock,
-      subcategory: input.subcategory
+      subcategory: input.subcategory,
+      id: input.id,
+      createdAt: input.createdAt,
+      updatedAt: input.updatedAt
     }
 
     const product = new Product(props)
