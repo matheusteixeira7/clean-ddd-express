@@ -7,11 +7,12 @@
   "compilerOptions": {
     "target": "es2021",
     "module": "commonjs",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./*"],
-      "#seedwork/*": ["./@seedwork/*"],
-      "#modules/*": ["./modules/*"]
+      "#seedwork/*": ["src/@seedwork/*"],
+      "#modules/*": ["src/modules/*"],
+      "#infra/*": ["src/infra/*"]
     },
     "outDir": "./dist",
     "esModuleInterop": true,
@@ -33,7 +34,7 @@
   },
   "include": [
     "env.d.ts",
-    "src/**/*.ts"
+    "src/**/*.ts",
   ],
   "exclude": [
     "src/**/__tests__/*"

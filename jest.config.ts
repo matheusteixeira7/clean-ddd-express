@@ -20,5 +20,8 @@ export default {
     '@/(.*)': '<rootDir>/src/$1',
     '#seedwork/(.*)': '<rootDir>/@seedwork/$1',
     '#modules/(.*)': '<rootDir>/modules/$1'
-  }
+  },
+  coveragePathIgnorePatterns: [
+    '.*\\.model\\..*', // exclude all files with *.model.* in the filename
+  ]
 }
