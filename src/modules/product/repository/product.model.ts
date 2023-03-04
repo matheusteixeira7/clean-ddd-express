@@ -1,5 +1,21 @@
 import { Table, Column, Model, PrimaryKey, DataType } from 'sequelize-typescript'
-import type Product from '#modules/product/domain/product.entity'
+
+interface ProductProps {
+  category: string
+  colors: ColorsInterface[]
+  createdAt: Date
+  description: string
+  details: DetailsInterface[]
+  id: string
+  images: ImagesInterface[]
+  name: string
+  price: number
+  rating: number
+  size: string[]
+  stock: number
+  subcategory: string
+  updatedAt: Date
+}
 
 interface ImagesInterface {
   id: string
@@ -20,7 +36,7 @@ interface ColorsInterface {
 }
 
 @Table({ tableName: 'products', timestamps: false })
-export class ProductModel extends Model<Product> {
+export class ProductModel extends Model<ProductProps> {
   @PrimaryKey
   @Column({ allowNull: false })
     id!: string

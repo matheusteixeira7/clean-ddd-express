@@ -1,9 +1,9 @@
 import type UseCaseInterface from '#seedwork/usecase/usecase.interface'
 import {
-  type ProductFacadeInterface,
   type AddProductFacadeInputDto,
   type CheckStockFacadeInputDto,
-  type CheckStockFacadeOutputDto
+  type CheckStockFacadeOutputDto,
+  type ProductFacadeInterface
 } from '#modules/product/facade/product.facade.interface'
 
 interface UseCaseProps {

@@ -1,6 +1,6 @@
 import BaseEntity from '#seedwork/domain/entity/base.entity'
-import type AggregateRoot from '#seedwork/domain/entity/aggregate-root.interface'
 import NotificationError from '#seedwork/domain/notification/notification.error'
+import type AggregateRoot from '#seedwork/domain/entity/aggregate-root.interface'
 
 interface ProductProps {
   category: string
