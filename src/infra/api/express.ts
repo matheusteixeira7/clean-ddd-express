@@ -1,13 +1,13 @@
 import express, { type Express } from 'express'
-import { Sequelize } from 'sequelize-typescript'
-import { ProductModel } from '#modules/product/repository/product.model'
-import { productRoute } from './routes/product.route'
 import morgan from 'morgan'
+import routes from '#infra/api/routes'
+import { ProductModel } from '#modules/product/repository/product.model'
+import { Sequelize } from 'sequelize-typescript'
 
 export const app: Express = express()
 app.use(express.json())
 app.use(morgan('dev'))
-app.use('/products', productRoute)
+app.use(routes)
 
 export let sequelize: Sequelize
 

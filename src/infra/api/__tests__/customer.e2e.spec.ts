@@ -71,6 +71,7 @@ describe('E2E Product Test', () => {
 
     const response = await request(app)
       .get('/products')
+      .set('Accept', 'application/json')
       .send({
         productId: '123',
         quantity: 1
@@ -81,6 +82,24 @@ describe('E2E Product Test', () => {
       productId: '123',
       available: true
     })
+
+    const responseXML = await request(app)
+      .get('/products')
+      .set('Accept', 'application/xml')
+      .send({
+        productId: '123',
+        quantity: 1
+      })
+
+    expect(responseXML.statusCode).toBe(200)
+    expect(responseXML.headers['content-type']).toEqual('application/xml; charset=utf-8')
+    expect(responseXML.text).toEqual(
+      '<?xml version="1.0" encoding="UTF-8"?>\n' +
+      '<productStock>\n' +
+      '  <productId>123</productId>\n' +
+      '  <available>true</available>\n' +
+      '</productStock>'
+    )
   })
 
   it('should return product availability false', async () => {
