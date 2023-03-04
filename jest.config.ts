@@ -17,9 +17,10 @@ export default {
     '^.+\\.(t|j)sx?$': '@swc/jest'
   },
   moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1',
+    '@/(.*)': '<rootDir>/$1',
     '#seedwork/(.*)': '<rootDir>/@seedwork/$1',
-    '#modules/(.*)': '<rootDir>/modules/$1'
+    '#modules/(.*)': '<rootDir>/modules/$1',
+    '#infra/(.*)': '<rootDir>/infra/$1'
   },
   coveragePathIgnorePatterns: [
     '.*\\.model\\..*', // exclude all files with *.model.* in the filename
