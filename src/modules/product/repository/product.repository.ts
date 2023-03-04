@@ -1,4 +1,3 @@
-import Id from '#seedwork/domain/value-objects/id.value-object'
 import Product from '#modules/product/domain/product.entity'
 import type ProductGateway from '#modules/product/gateway/product.gateway'
 import { ProductModel } from '#modules/product/repository/product.model'
