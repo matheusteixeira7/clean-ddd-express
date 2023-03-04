@@ -1,6 +1,6 @@
 import express, { type Express } from 'express'
 import morgan from 'morgan'
-import routes from '#infra/api/routes'
+import routes from '#infra/../../application/routes'
 import { ProductModel } from '#modules/product/infra/repository/product.model'
 import { Sequelize } from 'sequelize-typescript'
 
