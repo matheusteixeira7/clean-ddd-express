@@ -12,7 +12,8 @@
       "@/*": ["./*"],
       "#seedwork/*": ["src/@seedwork/*"],
       "#modules/*": ["src/modules/*"],
-      "#infra/*": ["src/infra/*"]
+      "#infra/*": ["src/infra/*"],
+      "#application/*": ["src/application/*"],
     },
     "outDir": "./dist",
     "esModuleInterop": true,

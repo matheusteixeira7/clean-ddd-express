@@ -20,7 +20,8 @@ export default {
     '@/(.*)': '<rootDir>/$1',
     '#seedwork/(.*)': '<rootDir>/@seedwork/$1',
     '#modules/(.*)': '<rootDir>/modules/$1',
-    '#infra/(.*)': '<rootDir>/infra/$1'
+    '#infra/(.*)': '<rootDir>/infra/$1',
+    '#application/(.*)': '<rootDir>/application/$1'
   },
   coveragePathIgnorePatterns: [
     '.*\\.model\\..*', // exclude all files with *.model.* in the filename
