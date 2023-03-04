@@ -1,15 +1,15 @@
 // Import the necessary types and class
-import { type CheckStockInputDto, type CheckStockOutputDto } from '#modules/product/usecase/check-stock/check-stock.dto'
 import CheckStockUseCase from './check-stock.usecase'
 import Product from '#modules/product/domain/product.entity'
+import { type CheckStockInputDto, type CheckStockOutputDto } from '#modules/product/usecase/check-stock/check-stock.dto'
 
 // Create a mock product
 const product = new Product({
-  id: 'abc123',
   category: 'electronics',
   colors: [{ name: 'red', bgColor: '#ff0000', selectedColor: '#ff0000' }],
   description: 'A great product',
   details: [{ name: 'dimensions', items: ['10 x 20 x 30 cm'] }],
+  id: 'abc123',
   images: [{ id: '1', name: 'product image', src: 'http://example.com/product.jpg', alt: 'Product image' }],
   name: 'Product',
   price: 99.99,

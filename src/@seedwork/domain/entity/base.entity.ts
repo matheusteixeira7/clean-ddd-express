@@ -1,14 +1,17 @@
 import Id from '#seedwork/domain/value-objects/id.value-object'
+import Notification from '#seedwork/domain/notification/notification'
 
 export default class BaseEntity {
   private readonly _id: string
   private _createdAt: Date
-  private _updatedAt: Date
+  protected _updatedAt: Date
+  public notification: Notification
 
   constructor (id?: string, createdAt?: Date, updatedAt?: Date) {
     this._id = id ?? new Id().id
     this._createdAt = createdAt ?? new Date()
     this._updatedAt = updatedAt ?? new Date()
+    this.notification = new Notification()
   }
 
   public get id (): string {

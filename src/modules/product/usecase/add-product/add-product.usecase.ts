@@ -1,7 +1,7 @@
-import type ProductRepository from '#modules/product/repository/product.repository'
-import { type AddProductInputDto } from '#modules/product/usecase/add-product/add-product.dto'
 import Product from '#modules/product/domain/product.entity'
+import type ProductRepository from '#modules/product/repository/product.repository'
 import type UseCaseInterface from '#seedwork/usecase/usecase.interface'
+import { type AddProductInputDto } from '#modules/product/usecase/add-product/add-product.dto'
 
 export default class AddProductUseCase implements UseCaseInterface {
   private readonly _productRepository: ProductRepository
@@ -14,8 +14,10 @@ export default class AddProductUseCase implements UseCaseInterface {
     const props = {
       category: input.category,
       colors: input.colors,
+      createdAt: input.createdAt,
       description: input.description,
       details: input.details,
+      id: input.id,
       images: input.images,
       name: input.name,
       price: input.price,
@@ -23,8 +25,6 @@ export default class AddProductUseCase implements UseCaseInterface {
       size: input.size,
       stock: input.stock,
       subcategory: input.subcategory,
-      id: input.id,
-      createdAt: input.createdAt,
       updatedAt: input.updatedAt
     }
 
