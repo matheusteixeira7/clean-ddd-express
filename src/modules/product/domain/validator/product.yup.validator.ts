@@ -1,5 +1,5 @@
 import * as yup from 'yup'
-import type Product from '#modules/product/domain/product.entity'
+import type Product from '#modules/product/domain/entity/product.entity'
 import type ValidatorInterface from '#seedwork/domain/validators/validator.interface'
 
 export default class ProductYupValidator implements ValidatorInterface<Product> {

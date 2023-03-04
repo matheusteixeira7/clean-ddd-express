@@ -1,7 +1,7 @@
-import Product from '#modules/product/domain/product.entity'
-import type ProductRepository from '#modules/product/repository/product.repository'
+import Product from '#modules/product/domain/entity/product.entity'
+import type ProductRepository from '#modules/product/infra/repository/product.repository'
 import type UseCaseInterface from '#seedwork/usecase/usecase.interface'
-import { type AddProductInputDto } from '#modules/product/usecase/add-product/add-product.dto'
+import { type AddProductInputDto } from '#modules/product/domain/usecase/add-product/add-product.dto'
 
 export default class AddProductUseCase implements UseCaseInterface {
   private readonly _productRepository: ProductRepository

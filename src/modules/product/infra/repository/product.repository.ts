@@ -1,6 +1,6 @@
-import Product from '#modules/product/domain/product.entity'
-import type ProductGateway from '#modules/product/gateway/product.gateway'
-import { ProductModel } from '#modules/product/repository/product.model'
+import Product from '#modules/product/domain/entity/product.entity'
+import type ProductGateway from '#modules/product/infra/gateway/product.gateway'
+import { ProductModel } from '#modules/product/infra/repository/product.model'
 
 export default class ProductRepository implements ProductGateway {
   async add (product: Product): Promise<void> {

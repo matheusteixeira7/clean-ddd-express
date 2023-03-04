@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript'
-import { ProductModel } from '#modules/product/repository/product.model'
-import Product from '#modules/product/domain/product.entity'
-import ProductRepository from '#modules/product/repository/product.repository'
+import { ProductModel } from '#modules/product/infra/repository/product.model'
+import Product from '#modules/product/domain/entity/product.entity'
+import ProductRepository from '#modules/product/infra/repository/product.repository'
 
 const input = {
   id: '123',

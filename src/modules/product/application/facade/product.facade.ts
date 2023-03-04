@@ -4,7 +4,7 @@ import {
   type CheckStockFacadeInputDto,
   type CheckStockFacadeOutputDto,
   type ProductFacadeInterface
-} from '#modules/product/facade/product.facade.interface'
+} from '#modules/product/application/facade/product.facade.interface'
 
 interface UseCaseProps {
   addProductUseCase: UseCaseInterface

@@ -1,6 +1,6 @@
 import BaseEntity from '#seedwork/domain/entity/base.entity'
 import NotificationError from '#seedwork/domain/notification/notification.error'
-import ProductValidatorFactory from '#modules/product/factory/product.validator.factory'
+import ProductValidatorFactory from '#modules/product/domain/factory/product.validator.factory'
 import type AggregateRoot from '#seedwork/domain/entity/aggregate-root.interface'
 
 interface ProductProps {

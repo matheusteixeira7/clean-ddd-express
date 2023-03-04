@@ -1,7 +1,7 @@
-import makeProductFacade from '#modules/product/factory/facade.factory'
+import makeProductFacade from '#modules/product/infra/factory/facade.factory'
 import { Sequelize } from 'sequelize-typescript'
-import { ProductModel } from '#modules/product/repository/product.model'
-import ProductRepository from '#modules/product/repository/product.repository'
+import { ProductModel } from '#modules/product/infra/repository/product.model'
+import ProductRepository from '#modules/product/infra/repository/product.repository'
 
 const input = {
   id: '123',

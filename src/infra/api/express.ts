@@ -1,7 +1,7 @@
 import express, { type Express } from 'express'
 import morgan from 'morgan'
 import routes from '#infra/api/routes'
-import { ProductModel } from '#modules/product/repository/product.model'
+import { ProductModel } from '#modules/product/infra/repository/product.model'
 import { Sequelize } from 'sequelize-typescript'
 
 export const app: Express = express()

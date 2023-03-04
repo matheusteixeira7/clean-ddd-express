@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { productRoutes } from '#modules/product/infra/routes/product.routes'
+import { productRoutes } from '#modules/product/application/routes/product.routes'
 
 const routes = Router()
 

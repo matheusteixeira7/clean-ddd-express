@@ -1,7 +1,7 @@
 // Import the necessary types and class
 import CheckStockUseCase from './check-stock.usecase'
-import Product from '#modules/product/domain/product.entity'
-import { type CheckStockInputDto, type CheckStockOutputDto } from '#modules/product/usecase/check-stock/check-stock.dto'
+import Product from '#modules/product/domain/entity/product.entity'
+import { type CheckStockInputDto, type CheckStockOutputDto } from '#modules/product/domain/usecase/check-stock/check-stock.dto'
 
 // Create a mock product
 const product = new Product({

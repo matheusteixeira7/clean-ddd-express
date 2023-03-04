@@ -1,6 +1,6 @@
 import CheckProductStockPresenter from '../presenters/product.presenter'
 import express, { type Request, type Response } from 'express'
-import makeProductFacade from '#modules/product/factory/facade.factory'
+import makeProductFacade from '#modules/product/infra/factory/facade.factory'
 
 export const productRoutes = express.Router()
 
